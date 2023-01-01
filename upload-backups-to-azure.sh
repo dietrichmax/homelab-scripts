@@ -1,10 +1,10 @@
 #!/bin/bash
 # Script to upload Proxmox backups to Azure Storage
 
-src="/mnt/pve/synology-nas-ds214-backup/dump/*"
-token="sastoken"
+src="/mnt/pve/synology-nas-ds214-backup/dump/"
+token="Blob SAS URL"
 
-echo "Uploading Proxmox backups from $src to Azure..."
-/azure-cli/azcopy copy "$src" "$token" --recursive=true
+echo "Synchronizing Proxmox backups from $src to Azure..."
+azcopy sync "$src" "$token" --delete-destination=true
 
-echo "Finished Upload!"
+echo "Finished Synchronizing!"
