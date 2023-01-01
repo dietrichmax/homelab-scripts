@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script to upload Proxmox backups to Azure Storage
+# Script to synchronize Proxmox backups to Azure Storage
 
 src="/mnt/pve/synology-nas-ds214-backup/dump/"
 token="token"
